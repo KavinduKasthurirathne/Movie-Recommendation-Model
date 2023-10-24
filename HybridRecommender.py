@@ -11,12 +11,16 @@ ratings = pd.read_csv("ratings_small.csv")  # Replace with your actual ratings d
 # Merge movies and ratings
 movie_ratings = pd.merge(ratings, movies, on='movieId')
 
+# Collaborative filtering
+
 # Create a user-item matrix for collaborative filtering
 user_movie_ratings = movie_ratings.pivot_table(index='userId', columns='title', values='rating').fillna(0)
 
 # Fit a Nearest Neighbors model for collaborative filtering
 knn_model_user = NearestNeighbors(metric='cosine', algorithm='brute', n_neighbors=20)
 knn_model_user.fit(user_movie_ratings)
+
+# Content-based filtering
 
 # Combine title and genre for content-based filtering
 movies['title_and_genre'] =  movies['genres']  + ' ' + movies['title']
