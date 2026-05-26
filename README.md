@@ -1,4 +1,3 @@
-# IRWA - Project 👍
 ##  Personalized Movie Recommendation Engine for Streaming Platform - 🔗https://recommenderapp.streamlit.app/
 ### <i>Required dataset - movie.csv & ratings_small.csv</i>
 
